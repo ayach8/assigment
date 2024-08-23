@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHOMLAAU LTD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: green;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: green;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .feedback-form {
+            margin-top: 30px;
+        }
+
+        .feedback-form label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to NHOMLAAU LTD</h1>
+    </header>
+
+    <div class="container">
+        <p>Enter your name to receive a personalized greeting:</p>
+
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="displayGreeting()">Submit</button>
+
+        <div class="results" id="resultsSection">
+            <!-- Results will be displayed here -->
+        </div>
+
+        <div class="feedback-form">
+            <h2>Feedback Form</h2>
+            <form id="feedbackForm">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name">
+
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <button type="button" onclick="cancelForm()">Cancel</button>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function displayGreeting() {
+            const name = document.getElementById('nameInput').value;
+            const resultsSection = document.getElementById('resultsSection');
+            
+            if(name) {
+                resultsSection.innerHTML = `<p>Hello, <strong>${name}</strong>! Welcome to NHOMLAAU LTD.</p>`;
+            } else {
+                resultsSection.innerHTML = `<p>Please enter your name to receive a greeting.</p>`;
+            }
+        }
+
+        function cancelForm() {
+            document.getElementById('feedbackForm').reset();
+        }
+    </script>
+
+</body>
+</html>
